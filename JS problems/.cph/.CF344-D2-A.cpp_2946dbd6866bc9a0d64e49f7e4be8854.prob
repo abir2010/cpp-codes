@@ -1,0 +1,1 @@
+{"name":"Local: CF344-D2-A","url":"h:\\cpp codes\\JS problems\\CF344-D2-A.cpp","tests":[{"id":1642764006133,"input":"6\n10\n10\n10\n01\n10\n10","output":"3"},{"id":1642764016022,"input":"4\n01\n01\n10\n10","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"h:\\cpp codes\\JS problems\\CF344-D2-A.cpp","group":"local","local":true}

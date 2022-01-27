@@ -1,0 +1,1 @@
+{"name":"Local: CF228-D2-A","url":"h:\\cpp codes\\JS problems\\CF228-D2-A.cpp","tests":[{"id":1642959527993,"input":"1 7 3 3","output":"1"},{"id":1642959532430,"input":"7 7 7 7","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"h:\\cpp codes\\JS problems\\CF228-D2-A.cpp","group":"local","local":true}

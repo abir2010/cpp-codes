@@ -9,21 +9,45 @@ int swap(int *a, int *b)
 }
 int main()
 {
-  int n,arr[1010],i,j,k,f=0,cnt1=0,cnt2=0;
+  int n,i,j,k,f=0,cnt=0,sum1=0,sum2=0,arr[1010];
   cin >> n;
   for(i=0;i<n;i++){
     cin >> arr[i];
   }
-  // for(i=0;i<n;i++){
-  //   for(j=0;j<n-1;j++){
-  //     if(arr[j]>arr[j+1]){
-  //       swap(arr[j],arr[j+1]);
-  //     }
-  //     // cout << j << " ";
-  //   }
-  //   // cout << i << " ";
-  // }
-  
+  int last_index = n-1;
+  int first_index = 0;
+  for(i=0;i<n;i++){
+    if(i%2==0){
+      if(arr[first_index] > arr[last_index]){
+        sum1 += arr[first_index];
+        first_index += 1;
+      } else if(arr[first_index] < arr[last_index]){
+        sum1 += arr[last_index];
+        last_index -= 1;
+      } else if((first_index == last_index)){
+        if(n%2==0){
+          sum2 += arr[first_index];
+        } else {
+          sum1 += arr[first_index];
+        }
+      }
+    } else {
+      if(arr[first_index] > arr[last_index]){
+        sum2 += arr[first_index];
+        first_index += 1;
+      } else if(arr[first_index] < arr[last_index]){
+        sum2 += arr[last_index];
+        last_index -= 1;
+      } else if((first_index == last_index)){
+        if(n%2==0){
+          sum2 += arr[first_index];
+        } else {
+          sum1 += arr[first_index];
+        }
+      }
+    }
+  }
+  cout << sum1 << " " << sum2 << endl;
 
   return 0;
 }

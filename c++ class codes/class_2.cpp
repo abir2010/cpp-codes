@@ -17,9 +17,21 @@ void printVec(vector<int> v2, string s = ""){
 class student{
   public:
     int id;
+    student(){
+      id = 0;
+      cout << "from constructor function!" << endl;
+    }
+    ~student(){
+      
+    }
+    void set_id(int ID){
+      id = ID;
+      cout << "id is : " << id << endl;
+    }
 };
 
 int main(){
-
+  student st;
+  st.set_id(10020);
   return 0;
 }

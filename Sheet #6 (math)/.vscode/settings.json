@@ -3,6 +3,8 @@
     ".c": "c",
     "iostream": "cpp",
     "cmath": "cpp",
-    "cstdlib": "cpp"
+    "cstdlib": "cpp",
+    "ostream": "cpp",
+    "complex": "cpp"
   }
 }

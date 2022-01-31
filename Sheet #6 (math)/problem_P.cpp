@@ -14,20 +14,23 @@ void printVec(vector<int> v2, string s = ""){
     cout << v2[i] << " ";
   cout << "\n";
 }
-int main(){
-  ll a,b,q;
-  cin >> a >> b >> q;
-  if(q==1){
-    cout << a << endl;
-  } else if(q==2){
-    cout << b << endl;
-  } else if(q==3){
-    cout << (a^b) << endl;
-  } else if(q%2==0){
-    cout << b << endl;
-  } else if(q%2!=0){
-    cout << a << endl;
+ll factorial(int x){
+  if(x==1){
+    return 1;
+  } else if(x==2){
+    return 2;
   }
-
+  return (x*factorial(x-1));
+}
+int fact(int n){
+    return std::tgamma(n + 1);  
+} 
+int main(){
+  int n;
+  cin >> n;
+  ll f = fact(n);
+  string str = to_string(f);
+  char const* c = str.c_str();
+  cout << "Number of digits of " << n << "! is " << strlen(c) << endl;
   return 0;
 }

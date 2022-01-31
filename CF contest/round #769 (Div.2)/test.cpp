@@ -15,19 +15,20 @@ void printVec(vector<int> v2, string s = ""){
   cout << "\n";
 }
 int main(){
-  ll a,b,q;
-  cin >> a >> b >> q;
-  if(q==1){
-    cout << a << endl;
-  } else if(q==2){
-    cout << b << endl;
-  } else if(q==3){
-    cout << (a^b) << endl;
-  } else if(q%2==0){
-    cout << b << endl;
-  } else if(q%2!=0){
-    cout << a << endl;
+  int t;
+  cin >> t;
+  while(t--){
+    int n,i,j;
+    char str[110];
+    cin >> n;
+    for(i=0; i<n; i++){
+      cin >> str[i];
+    }
+    if(n>2){
+      cout << "NO" << endl;
+    } else {
+      cout << "YES" << endl;
+    }
   }
-
   return 0;
 }

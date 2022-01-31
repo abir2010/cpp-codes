@@ -14,19 +14,20 @@ void printVec(vector<int> v2, string s = ""){
     cout << v2[i] << " ";
   cout << "\n";
 }
+
 int main(){
-  ll a,b,q;
-  cin >> a >> b >> q;
-  if(q==1){
-    cout << a << endl;
-  } else if(q==2){
-    cout << b << endl;
-  } else if(q==3){
-    cout << (a^b) << endl;
-  } else if(q%2==0){
-    cout << b << endl;
-  } else if(q%2!=0){
-    cout << a << endl;
+  int m,n,i,j,arr[100][100];
+  cin >> m >> n;
+  for(i=1; i<=m; i++){
+    for(j=1; j<=n; j++){
+      cin >> arr[i][j];
+    }
+  }
+  for(j=1; j<=n; j++){
+    for(i=1; i<=m; i++){
+      cout << arr[i][j] << " ";
+    }
+    cout << "\n";
   }
 
   return 0;

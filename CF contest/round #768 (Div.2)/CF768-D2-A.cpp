@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ull unsigned long long
+#define vi vector<int>
+#define vs vector<string>
+#define vl vector<ll>
+#define pb push_back
+#define sz(n) (int) (n).size()
+#define all(x) (x).begin(), (x).end()
+void printVec(vector<int> v2, string s = ""){
+  cout << s;
+  for(int i = 0; i < sz(v2) ; i++)
+    cout << v2[i] << " ";
+  cout << "\n";
+}
+
+int main(){
+  int t;
+  cin >> t;
+  while(t--){
+    int n,i,j,k,f=0,cnt=0,arr[110],brr[110],res[110];
+    cin >> n;
+    for(i=0; i<n; i++)
+      cin >> arr[i];
+    for(i=0; i<n; i++)
+      cin >> brr[i];
+    for(i=0; i<n; i++){
+      if(arr[i]<brr[i]){
+        swap(arr[i],brr[i]);
+      }
+    }
+    for(i=0; i<n; i++){
+      res[i] = arr[i]*brr[i];
+    }
+    int max1 = arr[0], max2 = brr[0];
+    for(i=1; i<n; i++){
+      if(arr[i]>max1){
+        max1 = arr[i];
+      }
+      if(brr[i]>max2){
+        max2 = brr[i];
+      }
+    }
+    cout << (max1*max2) << endl;
+  }
+
+  return 0;
+}

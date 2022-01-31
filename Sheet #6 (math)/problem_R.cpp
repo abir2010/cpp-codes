@@ -15,19 +15,9 @@ void printVec(vector<int> v2, string s = ""){
   cout << "\n";
 }
 int main(){
-  ll a,b,q;
-  cin >> a >> b >> q;
-  if(q==1){
-    cout << a << endl;
-  } else if(q==2){
-    cout << b << endl;
-  } else if(q==3){
-    cout << (a^b) << endl;
-  } else if(q%2==0){
-    cout << b << endl;
-  } else if(q%2!=0){
-    cout << a << endl;
-  }
-
+  ll x1,y1,x2,y2;
+  cin >> x1 >> y1 >> x2 >> y2;
+  double ans = sqrt((pow((x2-x1),2)+pow((y2-y1),2)));
+  cout << fixed << setprecision(9) << ans << endl;
   return 0;
 }

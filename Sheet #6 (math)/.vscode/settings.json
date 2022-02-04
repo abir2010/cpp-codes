@@ -5,6 +5,10 @@
     "cmath": "cpp",
     "cstdlib": "cpp",
     "ostream": "cpp",
-    "complex": "cpp"
+    "complex": "cpp",
+    "numeric": "cpp",
+    "deque": "cpp",
+    "string": "cpp",
+    "vector": "cpp"
   }
 }

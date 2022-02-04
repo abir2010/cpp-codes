@@ -23,18 +23,13 @@ int main(){
   for(i=1;i<=num;i++){
     if((n)%i == 0){
       // cout << "i :" << i << endl;
-      a.push_back(i);
-      if(i != (n/i)){
+      if(i == (n/i)){
         // cout << "num/i :" << n/i << endl;
-        a.push_back(n/i);
+        sum += i;
       } else {
-        continue;
+        sum += i+(n/i);
       }
     }
-  }
-  // printVec(a,"printing vector : ");
-  for(int i = 0; i < sz(a) ; i++){
-    sum += a[i];
   }
   cout << sum << " ";
   return 0;

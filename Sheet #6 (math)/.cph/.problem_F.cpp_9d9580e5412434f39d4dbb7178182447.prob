@@ -1,0 +1,1 @@
+{"name":"Local: problem_F","url":"h:\\cpp codes\\Sheet #6 (math)\\problem_F.cpp","tests":[{"id":1643868438666,"input":"2 2\n1 2\n2 1\n2 2\n3 4\n4 3","output":"11 10\n10 11"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"h:\\cpp codes\\Sheet #6 (math)\\problem_F.cpp","group":"local","local":true}

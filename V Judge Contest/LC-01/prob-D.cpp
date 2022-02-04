@@ -47,19 +47,13 @@ int main(){
   for(i=0; i<n; i++){
     cin >> a[i] >> b[i];
   }
-  // int dis_a = min_max(a,n,"max") - min_max(a,n,"min");
-  // int dis_b = min_max(b,n,"max") - min_max(b,n,"min");
-  // double ans = sqrt((dis_a*dis_a) + (dis_b*dis_b));
-  // cout << ans << endl;
-  int max = a[0];
-  for(i=0; i<n; i++){
-    for(j=1; j<n && j!=i; j++){
-      if(abs((a[i]-a[j])) > max){
-        max = abs((a[i]-a[j]));
-      }
+  for(i=0; i<n-1; i++){
+    for(j=0; j<n-i-1; j++){
+      ll dis_x = a[j]-a[j+1], dis_y = b[j]-b[j+1];
+
     }
   }
-  cout << max << endl;
 
   return 0;
 }
+//unsolved

@@ -1,0 +1,1 @@
+{"name":"Local: problem_W","url":"h:\\cpp codes\\Sheet #6 (math)\\problem_W.cpp","tests":[{"id":1643695487361,"input":"1 2 1 -2\n4 3 1 0","output":"YES"},{"id":1643695493196,"input":"0 0 6 0\n-8 7 -12 2","output":"NO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"h:\\cpp codes\\Sheet #6 (math)\\problem_W.cpp","group":"local","local":true}

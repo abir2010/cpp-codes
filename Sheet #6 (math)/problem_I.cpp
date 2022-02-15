@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define nl "\n"
 #define ll long long
 #define ull unsigned long long
 #define vi vector<int>
@@ -8,6 +9,9 @@ using namespace std;
 #define pb push_back
 #define sz(n) (int) (n).size()
 #define all(x) (x).begin(), (x).end()
+#define tc(x)  int x; cin >> x; while(x--)
+#define forN(x) for(int i=0;i<x;i++)
+const int zero = 0;
 bool isOdd(int n)	{	return n%2 != 0; }
 bool isPostive(int n)	{	return n>0; }
 bool isEqual(double a, double b) { return abs(a-b) < 2;	}
@@ -18,21 +22,15 @@ void printVec(vector<int> v2, string s = ""){
   cout << "\n";
 }
 int main() {
-  ll l,r,x,a,cnt=0;
-  double sum=0;
+  ll l,r,x,a,cnt1=0,cnt2=0,sum1=0,sum2=0,sum=0;
   cin >> l >> r >> x;
-  if(l%x == 0 && r%x == 0){
-    cnt = 1;
-  }
-  cnt += ((r-l)/x);
-  for(int i=l; i<=r; i++){
-    if(i%x == 0){
-      a = i; break;
-    }
-  }
-  // cout << cnt << a << x << endl;
-  sum = (cnt*((2*a)+((cnt-1)*x))/2);
+  ll mx = max(l,r), mn = min(l,r);
+  cnt1 = mx/x;
+  cnt2 = (mn-1)/x;
+  sum1 = x*((cnt1*(cnt1+1))/2);
+  sum2 = x*((cnt2*(cnt2+1))/2);
+  sum = sum1-sum2;
+  
   cout << sum << endl;
-  return 0;
+  return zero;
 }
-// unsolved

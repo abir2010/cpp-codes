@@ -1,0 +1,1 @@
+{"name":"Local: CF768-D2-A","url":"h:\\cpp codes\\JS problems\\CF768-D2-A.cpp","tests":[{"id":1644861818718,"input":"2\n1 5","output":"0"},{"id":1644861828054,"input":"3\n1 2 5","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"h:\\cpp codes\\JS problems\\CF768-D2-A.cpp","group":"local","local":true}

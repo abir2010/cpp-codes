@@ -1,0 +1,1 @@
+{"name":"Local: CF766-D2-A","url":"h:\\cpp codes\\JS problems\\CF766-D2-A.cpp","tests":[{"id":1644576263283,"input":"abcd\ndefgh","output":"5"},{"id":1644576282530,"input":"a\na","output":"-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"h:\\cpp codes\\JS problems\\CF766-D2-A.cpp","group":"local","local":true}

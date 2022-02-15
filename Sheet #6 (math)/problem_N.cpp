@@ -18,29 +18,36 @@ void printVec(vector<int> v2, string s = ""){
   cout << "\n";
 }
 int main(){
-  int t,n,x,z,p,i=0,ans=0;
+  ll t,x,z,p,ans=0,q;
+  string n;
   vs arr;
   cin >> t >> n >> x;
   if(t==1){
-    while(n%10 != n){
-      p = n%10;
-      ans += (p*pow(x,i));
-      n/=10; i++;
-      // cout << "n : " << n << " x : " << x << " i : " << i << endl;
-    } ans += ((n%10)*pow(x,i));
+    reverse(all(n));
+    for(int i=0; i<n.length(); i++){
+      if(n[i] >= 'A' && n[i] <= 'Z'){
+        q=n[i] - 55;
+      } else if(n[i] >= '0' && n[i] <= '9'){
+        q=n[i] - '0';
+      }
+      // cout << q << endl;
+      ans += (q*pow(x,i));
+      // cout << "i : " << i << " ans : " << (n[i]*pow(x,i)) << " ans : " << ans << endl;
+    }
     cout << ans << endl;
   } else {
-    while(n!=0){
-      if(n%x < n){
-        string c = to_string(n%x);
+    int m = stoi(n);
+    while(m!=0){
+      if(m%x < m){
+        string c = to_string(m%x);
         arr.pb(c);
       }
-      z = n;
-      n/=x;
+      z = m;
+      m/=x;
     } arr.pb(to_string(z));
-    for(int i = 0; i<sz(arr); i++){
+    for(int i = sz(arr)-1; i>=0; i--){
       if(stoi(arr[i]) > 9){
-        arr[i] = 2;
+        arr[i] = (stoi(arr[i]) + 7) + '0';
       }
       cout << arr[i];
     }
@@ -48,4 +55,3 @@ int main(){
 
   return 0;
 }
-//unsolved

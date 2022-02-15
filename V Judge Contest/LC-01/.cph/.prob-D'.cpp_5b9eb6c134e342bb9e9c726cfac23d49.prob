@@ -1,0 +1,1 @@
+{"name":"Local: prob-D'","url":"h:\\cpp codes\\V Judge Contest\\LC-01\\prob-D'.cpp","tests":[{"id":1644044762815,"input":"5\n1 6 10 8 4","output":"1 4 6 8 10"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"h:\\cpp codes\\V Judge Contest\\LC-01\\prob-D'.cpp","group":"local","local":true}

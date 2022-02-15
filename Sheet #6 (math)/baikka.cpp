@@ -18,7 +18,7 @@ void printVec(vector<int> v2, string s = ""){
   cout << "\n";
 }
 int main(){
-  cout << (5%2) << endl;
+  cout << (1%1000000000) << endl;
 
   return 0;
 }

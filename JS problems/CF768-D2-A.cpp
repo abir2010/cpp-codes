@@ -38,7 +38,14 @@ void solve(){
   forN(n){
     ll t; cin >> t; arr.pb(t);
   }
-  cout << n-2 << nl;
+  ll ans = n;
+  SORT(arr);
+  forN(n){
+    if(arr[i] == arr[0] || arr[i] == arr[(SZ(arr)-1)]){
+      --ans;
+    }
+  }
+  cout << ans << nl;
 }
 int main(){
   FASTIO;
@@ -47,4 +54,3 @@ int main(){
 
   return zero;
 }
-// unsolved

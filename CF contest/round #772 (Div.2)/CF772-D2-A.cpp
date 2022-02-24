@@ -33,25 +33,60 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  int n,k;
-  cin >> n >> k;
-  char ch[26];
-  forN(k){
-    ch[i] = 'a' + i;
+  int n,cnt=0; cin >> n;
+  vi arr;
+  forN(n){
+    int x; cin >> x; arr.pb(x);
   }
-  forN(n/k){
-    forN(k){
-      cout << ch[i];
+  for(int i=1; i<n-1; i++){
+    if((arr[i]<arr[i-1] && arr[i]<arr[i+1]) && n>4){
+      if(arr[i+1] < arr[i-1]){
+        arr[i] = arr[i-1];
+        cnt++;
+      } else if(arr[i+1] > arr[i-1]) {
+        arr[i] = arr[i+1];
+        cnt++;
+      } else {
+        if(arr[i-2] != arr[i-1]){
+          arr[i] = arr[i-1];
+          cnt++;
+        }
+      }
+    } else if(n==4){
+      if(arr[i]<arr[i-1] || arr[i]<arr[i+1]){
+        if(arr[i+1] <= arr[i-1]){
+          arr[i] = arr[i-1];
+          cnt++;
+        } else if(arr[i+1] > arr[i-1]) {
+          arr[i] = arr[i+1];
+          cnt++;
+        }
+      }
+    } else if(n==3){
+      if(arr[i]<arr[i-1] && arr[i]<arr[i+1]){
+        continue;
+      } else {
+        cnt++;
+      }
+    } else {
+      continue;
     }
   }
-  forN(n-((n/k)*k)){
-    cout << ch[i];
-  }
+  // for(int i=1; i<n-1; i++){
+  //   if(arr[i]>arr[i-1] && arr[i]>arr[i+1]){
+  //     arr[i] = min(arr[i+1],arr[i-1]);
+  //     cnt++;
+  //   }
+  // }
+  cout << cnt << nl;
+  printVec(arr);
 }
 int main(){
   FASTIO;
 
-  solve();
+  tc(t){
+    solve();
+  }
 
   return zero;
 }

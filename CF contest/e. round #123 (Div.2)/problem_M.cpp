@@ -32,20 +32,27 @@ int comp_double(double a, double b){
     return 0;
   return a<b ? -1 : 1;
 }
+void permutation(int arr[],int n){
+  do {
+    for(int i=0; i<n; i++){
+      cout << arr[i] << " ";
+    } cout << nl;
+  } while (next_permutation(arr , arr+n));
+}
 void solve(){
-  int n,k;
-  cin >> n >> k;
-  char ch[26];
-  forN(k){
-    ch[i] = 'a' + i;
+  vi :: iterator it_mn, it_mx;
+  int n; cin >> n;
+  vi v;
+  forN(n){
+    int x; cin >> x; v.pb(x);
   }
-  forN(n/k){
-    forN(k){
-      cout << ch[i];
-    }
-  }
-  forN(n-((n/k)*k)){
-    cout << ch[i];
+  auto mn = *min_element(all(v));
+  auto mx = *max_element(all(v));
+  it_mn = find(all(v), mn);
+  it_mx = find(all(v), mx);
+  swap( *it_mn, *it_mx );
+  forN(n){
+    cout << v[i] << " ";
   }
 }
 int main(){
@@ -55,3 +62,4 @@ int main(){
 
   return zero;
 }
+// unsolved

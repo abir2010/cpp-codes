@@ -33,19 +33,25 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  int n,k;
-  cin >> n >> k;
-  char ch[26];
-  forN(k){
-    ch[i] = 'a' + i;
-  }
-  forN(n/k){
-    forN(k){
-      cout << ch[i];
+  int n, m, f=0;
+  cin >> n >> m;
+  char arr[n][m];
+  for(int i=0; i<n; i++){
+    for(int j=0; j<m; j++){
+      cin >> arr[i][j];
     }
   }
-  forN(n-((n/k)*k)){
-    cout << ch[i];
+  for(int i=0; i<n; i++){
+    for(int j=0; j<m; j++){
+      if(arr[i][j] != 'B' && arr[i][j] != 'G' && arr[i][j] != 'W'){
+        f=1;
+      }
+    }
+  }
+  if(f==1){
+    cout << "#Color" << nl;
+  } else{
+    cout << "#Black&White" << nl;
   }
 }
 int main(){

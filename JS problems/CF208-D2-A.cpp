@@ -33,20 +33,21 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  int n,k;
-  cin >> n >> k;
-  char ch[26];
-  forN(k){
-    ch[i] = 'a' + i;
-  }
-  forN(n/k){
-    forN(k){
-      cout << ch[i];
+  string s;
+  cin >> s;
+  forN(s.length()){
+    if(s[i]=='W' && s[i+1]=='U' && s[i+2]=='B'){
+      // s[i] = ' ';
+      s.erase(s.begin()+i,s.begin()+i+3);
+      s.insert(s.begin()+i, ' ');
     }
   }
-  forN(n-((n/k)*k)){
-    cout << ch[i];
+  int loc;
+  while((loc = s.find("  ")) != std::string::npos)
+  {
+    s.replace(loc,2," ");
   }
+  cout << s << endl;
 }
 int main(){
   FASTIO;

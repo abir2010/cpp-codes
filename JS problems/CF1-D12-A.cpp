@@ -33,19 +33,15 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  int n,k;
-  cin >> n >> k;
-  char ch[26];
-  forN(k){
-    ch[i] = 'a' + i;
-  }
-  forN(n/k){
-    forN(k){
-      cout << ch[i];
-    }
-  }
-  forN(n-((n/k)*k)){
-    cout << ch[i];
+  ll n,m,a;
+  cin >> n >> m >> a;
+  ll f = (n*m)%(a*a) != 0 ? ((n*m)/(a*a))+1 : ((n*m)/(a*a));
+  if(f==1){
+    cout << 1 << nl;
+  } else if(f%2==0){
+    cout << f << nl;
+  } else {
+    cout << f+1 << nl;
   }
 }
 int main(){
@@ -55,3 +51,4 @@ int main(){
 
   return zero;
 }
+// unsolved

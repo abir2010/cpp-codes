@@ -18,7 +18,7 @@ using namespace std;
 #define forN(x) for(int i=0;i<x;i++)
 const int zero = 0;
 bool isOdd(int n)	{	return n%2 != 0; }
-bool isPostive(int n)	{	return n>0; }
+bool isPostive(ll n)	{	return n>0; }
 int max_3(int a, int b, int c){ return max(a,max(b,c)); }
 int min_3(int a, int b, int c){ return min(a,min(b,c)); }
 void printVec(vector<int> v2, string s = ""){
@@ -33,19 +33,19 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  int n,k;
-  cin >> n >> k;
-  char ch[26];
-  forN(k){
-    ch[i] = 'a' + i;
-  }
-  forN(n/k){
-    forN(k){
-      cout << ch[i];
+  ll n;
+  cin >> n;
+  if(isPostive(n)){
+    cout << (n/10) << nl;
+  } else if(n==0){sllll
+    cout << 0 << nl;
+  } else {
+    n += (-2*n);
+    if(n%10 == 0){
+      cout << '-' << n/10 << nl; 
+    } else {
+      cout << '-' << (n/10)+1 << nl;
     }
-  }
-  forN(n-((n/k)*k)){
-    cout << ch[i];
   }
 }
 int main(){

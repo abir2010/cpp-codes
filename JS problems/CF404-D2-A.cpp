@@ -33,19 +33,48 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  int n,k;
-  cin >> n >> k;
-  char ch[26];
-  forN(k){
-    ch[i] = 'a' + i;
-  }
-  forN(n/k){
-    forN(k){
-      cout << ch[i];
+  int n, f=0, f1=0, f2=0, cnt=0; cin >> n;
+  char arr[n][n];
+  string v;
+  int frq[27] = {0};
+  for(int i=0; i<n; i++){
+    for(int j=0; j<n; j++){
+      cin >> arr[i][j];
     }
   }
-  forN(n-((n/k)*k)){
-    cout << ch[i];
+
+  char ch = arr[0][0];
+  char ch2 = arr[0][1];
+  for(int i=0; i<n; i++){
+    v.pb(arr[i][i]);
+  }
+  for(int i=0,j=n-1; j>=0 && i<n ; i++,j--){
+    v.pb(arr[i][j]);
+  }
+  for(int i=0; i<SZ(v); i++){
+    if(v[i] != ch){
+      f=1;break;
+    }
+  }
+  for(int i=0; i<n; i++){
+    arr[i][i] = ch2;
+  }
+  for(int i=0,j=n-1; j>=0 && i<n ; i++,j--){
+    arr[i][j] = ch2;
+  }
+  for(int i=0; i<n; i++){
+    for(int j=0; j<n; j++){
+      if(arr[i][j] != ch2){
+        f1=1; break;
+      } else if(arr[i][j] == ch){
+        cnt++;
+      }
+    }
+  }
+  if(f==1 || f1==1 || cnt==(n*n)){
+    cout << "NO" << nl;
+  } else {
+    cout << "YES" << nl;
   }
 }
 int main(){

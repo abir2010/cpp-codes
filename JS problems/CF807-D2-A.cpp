@@ -33,19 +33,36 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  int n,k;
-  cin >> n >> k;
-  char ch[26];
-  forN(k){
-    ch[i] = 'a' + i;
+  vector<pair <int, int>> v;
+  int n, cnt=0, f=0; cin >> n;
+  forN(n){
+    int x, y;
+    cin >> x >> y;
+    v.pb({x,y});
   }
-  forN(n/k){
-    forN(k){
-      cout << ch[i];
+  forN(n){
+    if(v[i].first != v[i].second){
+      f=2;
+      break;
+    } else {
+      cnt++;
     }
   }
-  forN(n-((n/k)*k)){
-    cout << ch[i];
+  if(cnt == n){
+    for(int i=0; i<n; i++){
+      for(int j=i+1; j<n; j++){
+        if(v[i].first < v[j].first){
+          f=1; break;
+        }
+      }
+    }
+  }
+  if(f==1){
+    cout << "unrated" << nl;
+  } else if(f==2){
+    cout << "rated" << nl;
+  } else{
+    cout << "maybe" << nl;
   }
 }
 int main(){

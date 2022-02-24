@@ -33,19 +33,35 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  int n,k;
-  cin >> n >> k;
-  char ch[26];
-  forN(k){
-    ch[i] = 'a' + i;
-  }
-  forN(n/k){
-    forN(k){
-      cout << ch[i];
+  tc(t){
+    int cnt=0;
+    string s; cin >> s;
+    for(int i=0; i<SZ(s); i++){
+      if(s[i] == 'R'){
+        for(int j=i-1; j>=0; j--){
+          if(s[j] == 'r'){
+            cnt++;
+          }
+        }
+      } else if(s[i] == 'G'){
+        for(int j=i-1; j>=0; j--){
+          if(s[j] == 'g'){
+            cnt++;
+          }
+        }
+      } else if(s[i] == 'B'){
+        for(int j=i-1; j>=0; j--){
+          if(s[j] == 'b'){
+            cnt++;
+          }
+        }
+      }
     }
-  }
-  forN(n-((n/k)*k)){
-    cout << ch[i];
+    if(cnt == 3){
+      cout << "YES" << nl;
+    } else {
+      cout << "NO" << nl;
+    }
   }
 }
 int main(){

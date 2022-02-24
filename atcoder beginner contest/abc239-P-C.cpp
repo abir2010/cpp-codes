@@ -32,20 +32,25 @@ int comp_double(double a, double b){
     return 0;
   return a<b ? -1 : 1;
 }
+double dis(ll a, ll b, ll c, ll d){
+  return sqrt((pow(a-c,2))+(pow(b-d,2)));
+}
+int isRootFive(ll a,ll b,ll c,ll d){
+  if(comp_double(dis((isPositive(a)?a-1:a+1;),b+2,c,d),sqrt(5))==0 || comp_double(dis((isPostive(a)?a-2:a+2;),b+1,c,d),sqrt(5))==0){
+    return 1;
+  } else if(comp_double(dis(a,b,c+1,d-2),sqrt(5))==0 || comp_double(dis(a,b,c-2,d+1),sqrt(5))==0){
+    return 1;
+  } else {
+    return 0;
+  }
+}
 void solve(){
-  int n,k;
-  cin >> n >> k;
-  char ch[26];
-  forN(k){
-    ch[i] = 'a' + i;
-  }
-  forN(n/k){
-    forN(k){
-      cout << ch[i];
-    }
-  }
-  forN(n-((n/k)*k)){
-    cout << ch[i];
+  ll x1, y1, x2, y2;
+  cin >> x1 >> y1 >> x2 >> y2;
+  if(isRootFive(x1,y1,x2,y2) == 1){
+    cout << "Yes" << nl;
+  } else {
+    cout << "No" << nl;
   }
 }
 int main(){

@@ -38,13 +38,11 @@ void solve(){
   ll sum1 = (n*t)/k;
   ll sum2 = d+((n/(2*k))*t);
   if(sum1>sum2){
-    cout << "YES" << endl;
-  } else if(sum1 == sum2) {
-    cout << "NO" << endl;
+    cout << "YES" << nl;
   } else {
-    cout << "NO" << endl;
+    cout << "NO" << nl;
   }
-  cout << sum1 << " " << sum2 << endl;
+  cout << sum1 << " " << sum2 << nl;
 }
 int main(){
   FASTIO;

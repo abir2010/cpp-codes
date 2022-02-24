@@ -33,19 +33,22 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  int n,k;
-  cin >> n >> k;
-  char ch[26];
-  forN(k){
-    ch[i] = 'a' + i;
+  ll n,m,presum[200020];
+  cin >> n >> m;
+  vi arr;
+  forN(n){
+    ll x; cin >> x; arr.pb(x);
   }
-  forN(n/k){
-    forN(k){
-      cout << ch[i];
-    }
+  presum[0] = 0;
+  presum[1] = arr[0];
+  for(int i=2; i<=n; i++){
+    presum[i] = presum[i-1] + arr[i-1];
   }
-  forN(n-((n/k)*k)){
-    cout << ch[i];
+  while(m--){
+    ll l,r;
+    cin >> l >> r;
+    ll ans = presum[r] - presum[l-1];
+    cout << ans << nl;
   }
 }
 int main(){

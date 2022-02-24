@@ -33,19 +33,30 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  int n,k;
+  ll n,k;
+  vi arr;
   cin >> n >> k;
-  char ch[26];
-  forN(k){
-    ch[i] = 'a' + i;
-  }
-  forN(n/k){
-    forN(k){
-      cout << ch[i];
+  // ll z = (n%2==0) ? n/2 : (n/2)+1;
+  // forN(z){
+  //   int x=i;
+  //   arr.pb((2*x)+1);
+  // }
+  // forN(n/2){
+  //   int y=i+1;
+  //   arr.pb(2*y);
+  // }
+  if(n%2 == 0){
+    if((n/2) >= k){
+      cout << (2*k)-1 << nl;
+    } else {
+      cout << (k-(n/2))*2 << nl;
     }
-  }
-  forN(n-((n/k)*k)){
-    cout << ch[i];
+  } else{
+    if(((n+1)/2) >= k){
+      cout << (2*k)-1 << nl;
+    } else {
+      cout << (k-((n+1)/2))*2 << nl;
+    }
   }
 }
 int main(){
@@ -54,4 +65,4 @@ int main(){
   solve();
 
   return zero;
-}
+} 

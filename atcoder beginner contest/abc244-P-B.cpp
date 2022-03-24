@@ -33,10 +33,33 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  ll n,m,a;
-  cin >> n >> m >> a;
-	long long x = (n + a - 1) / a, y = (m + a - 1) / a;
-	cout << (x * y) << nl;
+  int n;
+  vector<char> s;
+  cin >> n;
+  forN(n){
+    char a;
+    cin >> a;
+    s.pb(a);
+  }
+  int r = 0, x = 0, y = 0;
+  forN(n){
+    if(s[i]=='R'){
+      r+=1;
+    }
+    if(r>3){
+      r=0;
+    }
+    if(s[i]=='S' && r==0){
+      x+=1;
+    } else if(s[i]=='S' && r==1){
+      y-=1;
+    } else if(s[i]=='S' && r==2){
+      x-=1;
+    } else if(s[i]=='S' && r==3){
+      y+=1;
+    }
+  }
+  cout << x << " " << y << nl;
 }
 int main(){
   FASTIO;

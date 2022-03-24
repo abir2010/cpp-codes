@@ -12,8 +12,8 @@ using namespace std;
 #define pb push_back
 #define SZ(n) (int) (n).size()
 #define all(x) (x).begin(), (x).end()
-#define SORT(x) sort(all(x)) 
-#define REVERSE(x) reverse(all(x)) 
+#define SORT(x) sort(all(x))
+#define REVERSE(x) reverse(all(x))
 #define tc(x)  int x; cin >> x; while(x--)
 #define forN(x) for(int i=0;i<x;i++)
 const int zero = 0;
@@ -33,10 +33,15 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  ll n,m,a;
-  cin >> n >> m >> a;
-	long long x = (n + a - 1) / a, y = (m + a - 1) / a;
-	cout << (x * y) << nl;
+  double a,b,c,x;
+  cin >> a >> b >> c >> x;
+  if(x<=a){
+    cout << setprecision(12) << fixed << 1.0 << nl;
+  } else if(x>=(a+1) && x<=b){
+    cout << setprecision(12) << fixed << (c/(b-a)) << nl;
+  } else {
+    cout << setprecision(12) << fixed << 0.0 << nl;
+  }
 }
 int main(){
   FASTIO;

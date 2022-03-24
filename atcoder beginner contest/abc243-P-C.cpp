@@ -33,10 +33,50 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  ll n,m,a;
-  cin >> n >> m >> a;
-	long long x = (n + a - 1) / a, y = (m + a - 1) / a;
-	cout << (x * y) << nl;
+  int n,f=0; cin >> n;
+  vi x,y;
+  forN(n){
+    ll a,b;
+    cin >> a >> b;
+    x.pb(a); y.pb(b);
+  }
+  string s;
+  cin >> s;
+  for(int i=0; i<n; i++){
+    for(int j=0; j<n; j++){
+      if(y[i] == y[j] && i!=j){
+        if(x[i] > x[j]){
+          if(s[i]=='L' && s[j]=='R'){
+            f=1;break;
+          }
+        } else {
+          if(s[i]=='R' && s[j]=='L'){
+            f=1;break;
+          }
+        }
+      } else {
+        continue;
+      }
+    }
+  }
+  // for(int i=0; i<n; i++){
+  //   for(int j=i+1; j<n; j++){
+  //     if(s[i]=='R' && s[j]=='L'){
+  //       if(y[i]==y[j] && x[i]<x[j]){
+  //         f=1;
+  //       }
+  //     } else if(s[i]=='L' && s[j]=='R'){
+  //       if(y[i]==y[j] && x[i]>x[j]){
+  //         f=1;
+  //       }
+  //     }
+  //   }
+  // }
+  if(f){
+    cout << "Yes" << nl;
+  } else {
+    cout << "No" << nl;
+  }
 }
 int main(){
   FASTIO;
@@ -45,3 +85,4 @@ int main(){
 
   return zero;
 }
+// TLE

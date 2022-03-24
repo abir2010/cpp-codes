@@ -7,6 +7,7 @@ using namespace std;
 #define ll long long
 #define ull unsigned long long
 #define vi vector<int>
+#define vc vector<char>
 #define vs vector<string>
 #define vl vector<ll>
 #define pb push_back
@@ -33,10 +34,20 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  ll n,m,a;
-  cin >> n >> m >> a;
-	long long x = (n + a - 1) / a, y = (m + a - 1) / a;
-	cout << (x * y) << nl;
+  int n, f=0, a[1010]; cin >> n;
+  forN(n){
+    cin >> a[i];
+  }
+  forN(n){
+    int x = a[i];
+    if(a[i]==x && a[i+1]==x && a[i+2]==x && a[i+3]==x && i!=(n-4)){
+      f=1;break;
+    }
+  }
+  if(f)
+    cout << "NO" << nl;
+  else
+    cout << "YES" << nl;
 }
 int main(){
   FASTIO;

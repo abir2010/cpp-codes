@@ -33,15 +33,19 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  ll n,m,a;
-  cin >> n >> m >> a;
-	long long x = (n + a - 1) / a, y = (m + a - 1) / a;
-	cout << (x * y) << nl;
+  int n;
+  cin >> n;
+  if(360 % (180-n) == 0){
+    cout << "YES" << nl;
+  } else {
+    cout << "NO" << nl;
+  }
 }
 int main(){
   FASTIO;
 
-  solve();
+  tc(t)
+    solve();
 
   return zero;
 }

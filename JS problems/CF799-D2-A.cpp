@@ -33,16 +33,32 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  ll n,t,k,d,i,j,f=0,cnt=0;
+   int n, t, k, d;
+
   cin >> n >> t >> k >> d;
-  ll sum1 = (n*t)/k;
-  ll sum2 = d+((n/(2*k))*t);
-  if(sum1>sum2){
-    cout << "YES" << nl;
-  } else {
-    cout << "NO" << nl;
+  int i = 1;
+  int total_t = (ceil((double)n/k))*t;
+  int baked = t;
+  int baked1 = d + t;
+  while (1){
+    if (baked == i){
+      baked += t;
+      n -= k;
+    }
+    if (baked1 == i){
+      baked1 += t;
+      n -= k;
+    }
+    if (n<=0){
+      break;
+    }
+      i++;
   }
-  cout << sum1 << " " << sum2 << nl;
+  if(i<total_t){
+    cout << "YES" << endl;
+  } else {
+    cout << "NO" << endl;
+  }
 }
 int main(){
   FASTIO;
@@ -51,4 +67,3 @@ int main(){
 
   return zero;
 }
-// unsolved

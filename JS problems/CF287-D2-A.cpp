@@ -7,6 +7,7 @@ using namespace std;
 #define ll long long
 #define ull unsigned long long
 #define vi vector<int>
+#define vc vector<char>
 #define vs vector<string>
 #define vl vector<ll>
 #define pb push_back
@@ -33,10 +34,39 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  ll n,m,a;
-  cin >> n >> m >> a;
-	long long x = (n + a - 1) / a, y = (m + a - 1) / a;
-	cout << (x * y) << nl;
+  int f = 0;
+  char a[6][6];
+  for(int i=1; i<5; i++){
+    for(int j=1; j<5; j++){
+      cin >> a[i][j];
+    }
+  }
+  for(int i=1; i<5; i++){
+    for(int j=1; j<5; j++){
+      if(a[i][j] == '#' && a[i][j+1] == '#'){
+        if(a[i+1][j] == '#' || a[i+1][j+1] == '#'){
+          f=1;break;
+        } else if(a[i-1][j] == '#' || a[i-1][j+1] == '#'){
+          f=1;break;
+        }
+      }
+    }
+  }
+  for(int i=0; i<6; i++){
+    for(int j=0; j<6; j++){
+      if(a[i][j] == '.' && a[i][j+1] == '.'){
+        if(a[i+1][j] == '.' || a[i+1][j+1] == '.'){
+          f=1;break;
+        } else if(a[i-1][j] == '.' || a[i-1][j+1] == '.'){
+          f=1;break;
+        }
+      }
+    }
+  }
+  if(f)
+    cout << "YES" << nl;
+  else
+    cout << "NO" << nl;
 }
 int main(){
   FASTIO;

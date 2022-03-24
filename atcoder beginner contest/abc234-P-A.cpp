@@ -8,11 +8,8 @@ using namespace std;
 #define pb push_back
 #define sz(n) (int) (n).size()
 #define all(x) (x).begin(), (x).end()
-
 bool isOdd(int n)	{	return n%2 != 0; }
-
 bool isPostive(int n)	{	return n>0; }
-
 bool isEqual(int a, int b) { return abs(a-b) < 2;	}
 
 void printVec(vector<int> v2, string s = ""){

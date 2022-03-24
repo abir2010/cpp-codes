@@ -32,11 +32,46 @@ int comp_double(double a, double b){
     return 0;
   return a<b ? -1 : 1;
 }
+vs x;
+void permutations(string str, int i, int n){
+  if (i == n - 1){
+    x.pb(str);
+    return;
+  }
+  for (int j = i; j < n; j++){
+    swap(str[i], str[j]);
+    permutations(str, i + 1, n);
+    swap(str[i], str[j]);
+  }
+}
+string convertToString(char* a, int size)
+{
+    int i;
+    string s = "";
+    for (i = 0; i < size; i++) {
+        s = s + a[i];
+    }
+    return s;
+}
 void solve(){
-  ll n,m,a;
-  cin >> n >> m >> a;
-	long long x = (n + a - 1) / a, y = (m + a - 1) / a;
-	cout << (x * y) << nl;
+  string s;
+  char ans[100];
+  cin >> s;
+  permutations(s,0,s.length());
+  for(int i=0; i<SZ(x); i++){
+    char a[x[i].length()];
+    strcpy(a,x[i].c_str());
+    char b[x[i+1].length()];
+    strcpy(b,x[i+1].c_str());
+    int s1=x[i].length(), s2=x[i+1].length();
+    if(lexicographical_compare(a,a+s1, b,b+s2)){
+      strcpy(ans,a);
+    } else {
+      strcpy(ans,b);
+    }
+  }
+  convertToString(ans,sizeof(ans) / sizeof(char));
+  cout << ans << nl;
 }
 int main(){
   FASTIO;

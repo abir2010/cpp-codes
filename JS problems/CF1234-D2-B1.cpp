@@ -33,10 +33,29 @@ int comp_double(double a, double b){
   return a<b ? -1 : 1;
 }
 void solve(){
-  ll n,m,a;
-  cin >> n >> m >> a;
-	long long x = (n + a - 1) / a, y = (m + a - 1) / a;
-	cout << (x * y) << nl;
+  int n,k;
+  cin >> n >> k;
+  deque<int> Q,D;
+  forN(n){
+    int x; cin >> x; Q.push_back(x);
+  }
+  D.push_front(Q[0]);
+  for(int i=1; i<n; i++){
+    int f=0;
+    for(int j=0; j<D.size(); j++){
+      if(Q[i]==D[j]){
+        f=1;
+      }
+    }
+    if(!f && Q[i]!=0)
+      D.push_front(Q[i]);
+    if(D.size()>k)
+      D.pop_back();
+  }
+  cout << D.size() << nl;
+  forN(D.size()){
+    cout << D[i] << " ";
+  }
 }
 int main(){
   FASTIO;
